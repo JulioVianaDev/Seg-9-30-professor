@@ -1,10 +1,11 @@
-import Simples from "./components/exemplos/Simples"
-import Composto from "./components/exemplos/Composto"
+import Navbar from "./components/UI/Navbar"
+  
+
 function App(){
   return(
     <div>
-      
-     
+           <Navbar />
+
     </div>
   )
 }
