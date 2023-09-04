@@ -1,8 +1,11 @@
 import React from 'react'
+import AddNewButton from '../components/UI/AddNewButton'
 
 function Notes() {
   return (
-    <div>Notes</div>
+    <div>
+      <AddNewButton/>
+    </div>
   )
 }
 
