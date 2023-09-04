@@ -6,7 +6,7 @@ function AddNewButton(props) {
     <div 
       onMouseLeave={()=>setMouse(true)} 
       onMouseEnter={()=>setMouse(false)}
-      // onClick={()=>props.abrirOModal()}
+      onClick={()=>props.abrirOModal()}
       className={`${mouse ? "addNewButton" : "addNewButton-mouse"}`}
     >
       {mouse ? "+" : "Adicionar uma anotação"}
