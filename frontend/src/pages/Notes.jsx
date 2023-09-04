@@ -70,7 +70,9 @@ function Notes() {
       {
         showModal ? <Modal fecharOModal={mudarModal}/> : null
       }
-      {notes.map(n=><Note {...n}/>)}
+      <div className="noteslist">
+        {notes.map(n=><Note {...n}/>)}
+      </div>
     </div>
   )
 }
