@@ -15,7 +15,7 @@ function Notes() {
         setNotes(res.data)
       }).catch(err=>console.log("erro ao pegar os dados da api",err))
   }
-  const createNote = ({title,description})=>{
+  const createNote = (title,description)=>{
     axios.post('http://localhost:3001/notes',{title,description})
     .then(res=>{
       // console.log(res)
@@ -68,7 +68,7 @@ function Notes() {
     <div>
       <AddNewButton abrirOModal={mudarModal}/>
       {
-        showModal ? <Modal fecharOModal={mudarModal}/> : null
+        showModal ? <Modal  createNote={createNote} fecharOModal={mudarModal}/> : null
       }
       <div className="noteslist">
         {notes.map(n=><Note {...n}/>)}

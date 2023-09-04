@@ -10,7 +10,7 @@ function Modal(props) {
         <AiFillCloseCircle size={40} color='white'/>
       </div>
       <div>
-       <Form/>
+       <Form fecharOModal={props.fecharOModal} createNote={props.createNote}/>
       </div>
     </div>
   )
