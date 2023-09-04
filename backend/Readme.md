@@ -11,3 +11,7 @@
 ## instalando o nodemon pra rodar sozinho
 
 ```npm i nodemon```
+
+## instalando dependencias de banco de dados
+
+```npm i sequelize sqlite3```
