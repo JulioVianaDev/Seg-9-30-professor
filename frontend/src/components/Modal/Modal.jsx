@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Modal.css"
 import {AiFillCloseCircle} from 'react-icons/ai'
-// import Form from '../Form/Form'
+import Form from '../Form/Form'
 
 function Modal(props) {
   return (
@@ -10,7 +10,7 @@ function Modal(props) {
         <AiFillCloseCircle size={40} color='white'/>
       </div>
       <div>
-       {/* <Form/> */}
+       <Form/>
       </div>
     </div>
   )
