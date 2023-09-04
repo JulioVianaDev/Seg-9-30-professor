@@ -3,17 +3,23 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Notes from "./pages/Notes";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>template</div>,
+    element: <Layout/>,
     children: [
-   
+      {
+        path: 'notes',
+        element: <Notes/>
+      },
+      {
+        path: "ex",
+        element: <p>Exemplo </p>
+      }
     ]
-  }, {
-    path: 'notes',
-    element: <h1>Página de anotação</h1>
-  }
+  }, 
 ]);
 function App(){
   return(
