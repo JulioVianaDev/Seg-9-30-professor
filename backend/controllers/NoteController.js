@@ -1,3 +1,5 @@
+
+
 module.exports = class NotesController{
   static async getAll(req,res){
     res.status(200).json({message: "rota para pegar todos"})
