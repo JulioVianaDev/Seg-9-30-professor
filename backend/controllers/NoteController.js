@@ -24,9 +24,39 @@ module.exports = class NotesController{
     }
   }
   static async deleteNote(req,res){
+    const {id} =req.params;
+    try {
+      const note = await Note.findByPk(id);
+      if(note){
+        await note.destroy();
+        res.status(201).json({message: "anotação deletada com sucesso"})
+      }else{
+        res.status(404).json({message: "anotação não encontrada"})
+      }
+    } catch (error) {
+      console.log(error)
+      res.status(500).json({error: "erro ao tentar deletar a chave"})
+    }
     res.status(200).json({message: "rota para deletar um"})
   }
   static async editNote(req,res){
-    res.status(200).json({message: "rota para editar um"})
+    const {id} =req.params;
+    const {title,description}= req.body;
+    const note = await Note.findByPk(id);
+    try {
+      if(note){
+      note.title = title || note.title
+      note.description = description || note.description
+      note.date = Date.now()
+      await note.save();
+      res.status(201).json({message: "Anotação editada com sucesso!",note: note})
+    }else{
+      res.status(404).json({error: "erro ao tentar achar a anotação"})
+    }
+    } catch (error) {
+      console.log(error);
+      res.status(404).json({error: "erro ao tentar editar a anotação"})
+    }
+    
   }
 }
